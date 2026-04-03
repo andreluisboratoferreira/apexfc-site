@@ -1,0 +1,211 @@
+:root {
+    --primary-purple: #6a0dad; /* Roxo da camisa */
+    --accent-pink: #ff2d55;   /* Rosa da logo */
+    --dark-bg: #0d0d0d;
+    --card-bg: #1a1a1a;
+    --text-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo span {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Navbar */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary-purple);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 55px;
+}
+
+.logo span {
+    font-size: 1.4rem;
+    background: linear-gradient(to right, #fff, var(--primary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-pink);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(106, 13, 173, 0.4)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2070') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    text-shadow: 0 0 20px var(--primary-purple);
+    margin-bottom: 10px;
+}
+
+/* Seções */
+.section {
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    color: var(--primary-purple);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Uniformes */
+.uniforme-display {
+    display: flex;
+    justify-content: center;
+}
+
+.uniforme-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #333;
+    text-align: center;
+    transition: 0.4s;
+    max-width: 500px;
+}
+
+.uniforme-card:hover {
+    border-color: var(--primary-purple);
+    transform: translateY(-10px);
+}
+
+.img-uniforme {
+    width: 100%;
+    max-width: 350px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.uniforme-info h3 {
+    margin: 20px 0 10px;
+    color: var(--accent-pink);
+}
+
+/* Patrocínios */
+.bg-darker { background-color: #080808; }
+
+.patrocinio-box {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-pink);
+}
+
+.icon-big {
+    font-size: 4rem;
+    color: var(--primary-purple);
+    margin-bottom: 20px;
+}
+
+.btn-email {
+    display: inline-block;
+    margin-top: 30px;
+    background: var(--primary-purple);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(106, 13, 173, 0.4);
+}
+
+.btn-email:hover {
+    background: var(--accent-pink);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.email-link {
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.socials {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-content h1 { font-size: 3rem; }
+    .patrocinio-box { padding: 30px; }
+    .btn-email { font-size: 0.8rem; padding: 15px 20px; }
+}
