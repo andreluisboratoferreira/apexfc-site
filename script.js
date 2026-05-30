@@ -23,12 +23,20 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// Scroll Suave
+// Scroll Suave apenas para links internos que começam estritamente com #
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        
+        // Garante que o href não é apenas '#' isolado e que o elemento alvo existe na página
+        if (targetId && targetId !== '#') {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
     });
 });
